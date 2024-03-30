@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Attribinter.Parameters</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Title>Attribinter.Parameters.Type</Title>
+        <Description>
+            Provides components related to Attribinter type-parameters.
+        </Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Attribinter.Parameters.Type.Abstractions\Attribinter.Parameters.Type.Abstractions.csproj" />
+        <ProjectReference Include="..\Attribinter.Parameters.Type.Core\Attribinter.Parameters.Type.Core.csproj" />
+    </ItemGroup>
+
+</Project>

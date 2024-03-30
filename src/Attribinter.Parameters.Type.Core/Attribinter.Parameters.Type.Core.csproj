@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Attribinter.Parameters</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Title>Attribinter.Parameters.Type.Core</Title>
+        <Description>
+            Defines Attribinter type-parameters.
+        </Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" />
+    </ItemGroup>
+
+</Project>
