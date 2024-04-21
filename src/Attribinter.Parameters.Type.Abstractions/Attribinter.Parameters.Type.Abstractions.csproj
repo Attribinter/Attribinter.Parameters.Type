@@ -2,14 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>Attribinter.Parameters</RootNamespace>
-    </PropertyGroup>
 
-    <PropertyGroup>
+        <RootNamespace>Attribinter.Parameters</RootNamespace>
+
         <Title>Attribinter.Parameters.Type.Abstractions</Title>
-        <Description>
-            Provides abstractions related to Attribinter type-parameters.
-        </Description>
+        <Description>Provides abstractions related to Attribinter type-parameters.</Description>
     </PropertyGroup>
 
     <ItemGroup>

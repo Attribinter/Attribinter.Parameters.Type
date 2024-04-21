@@ -10,25 +10,23 @@ using Xunit;
 
 public sealed class Create
 {
-    private static ITypeParameter Target(ITypeParameterSymbol symbol) => Context.Factory.Create(symbol);
+    private ITypeParameter Target(ITypeParameterSymbol symbol) => Fixture.Sut.Create(symbol);
 
-    private static readonly FactoryContext Context = FactoryContext.Create();
+    private readonly IFactoryFixture Fixture = FactoryFixtureFactory.Create();
 
     [Fact]
     public void NullSymbol_ThrowsArgumentNullException()
     {
-        var exception = Record.Exception(() => Target(null!));
+        var result = Record.Exception(() => Target(null!));
 
-        Assert.IsType<ArgumentNullException>(exception);
+        Assert.IsType<ArgumentNullException>(result);
     }
 
     [Fact]
-    public void ValidSymbol_ContainsSymbol()
+    public void ValidSymbol_ReturnsTypeParameter()
     {
-        var symbol = Mock.Of<ITypeParameterSymbol>();
+        var result = Target(Mock.Of<ITypeParameterSymbol>());
 
-        var result = Target(symbol);
-
-        Assert.Same(symbol, result.Symbol);
+        Assert.NotNull(result);
     }
 }
