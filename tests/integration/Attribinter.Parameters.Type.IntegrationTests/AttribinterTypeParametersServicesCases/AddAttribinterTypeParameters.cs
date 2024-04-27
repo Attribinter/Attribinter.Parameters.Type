@@ -11,8 +11,6 @@ using Xunit;
 
 public sealed class AddAttribinterTypeParameters
 {
-    private static IServiceCollection Target(IServiceCollection services) => AttribinterTypeParametersServices.AddAttribinterTypeParameters(services);
-
     [Fact]
     public void NullServiceCollection_ArgumentNullException()
     {
@@ -34,8 +32,11 @@ public sealed class AddAttribinterTypeParameters
     [Fact]
     public void ITypeParameterFactory_ServiceCanBeResolved() => ServiceCanBeResolved<ITypeParameterFactory>();
 
+    private static IServiceCollection Target(IServiceCollection services) => AttribinterTypeParametersServices.AddAttribinterTypeParameters(services);
+
     [AssertionMethod]
-    private static void ServiceCanBeResolved<TService>() where TService : notnull
+    private static void ServiceCanBeResolved<TService>()
+        where TService : notnull
     {
         HostBuilder host = new();
 
