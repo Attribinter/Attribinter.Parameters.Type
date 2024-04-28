@@ -11,31 +11,32 @@ using Xunit;
 
 public sealed class AddAttribinterTypeParameters
 {
-    private static IServiceCollection Target(IServiceCollection services) => AttribinterTypeParametersServices.AddAttribinterTypeParameters(services);
-
     [Fact]
     public void NullServiceCollection_ArgumentNullException()
     {
-        var exception = Record.Exception(() => Target(null!));
+        var result = Record.Exception(() => Target(null!));
 
-        Assert.IsType<ArgumentNullException>(exception);
+        Assert.IsType<ArgumentNullException>(result);
     }
 
     [Fact]
     public void ValidServiceCollection_ReturnsSameServiceCollection()
     {
-        var serviceCollection = Mock.Of<IServiceCollection>();
+        var services = Mock.Of<IServiceCollection>();
 
-        var actual = Target(serviceCollection);
+        var result = Target(services);
 
-        Assert.Same(serviceCollection, actual);
+        Assert.Same(services, result);
     }
 
     [Fact]
     public void ITypeParameterFactory_ServiceCanBeResolved() => ServiceCanBeResolved<ITypeParameterFactory>();
 
+    private static IServiceCollection Target(IServiceCollection services) => AttribinterTypeParametersServices.AddAttribinterTypeParameters(services);
+
     [AssertionMethod]
-    private static void ServiceCanBeResolved<TService>() where TService : notnull
+    private static void ServiceCanBeResolved<TService>()
+        where TService : notnull
     {
         HostBuilder host = new();
 
@@ -43,8 +44,8 @@ public sealed class AddAttribinterTypeParameters
 
         var serviceProvider = host.Build().Services;
 
-        var service = serviceProvider.GetRequiredService<TService>();
+        var result = serviceProvider.GetRequiredService<TService>();
 
-        Assert.NotNull(service);
+        Assert.NotNull(result);
     }
 }
