@@ -1,14 +1,5 @@
-# Attribinter.Parameters.Type
+# Paraminter.Parameters.Type
 
-Adds type-parameters to `Attribinter`.
+Adds type parameters to `Paraminter`.
 
-See [Attribinter](https://www.github.com/Attribinter/Attribinter) for more information.
-
-## NuGet
-
-The repository publishes the following NuGet packages:
-
-* [Attribinter.Parameters.Type](https://www.nuget.org/packages/Attribinter.Parameters.Type/)
-* [Attribinter.Parameters.Type.Abstractions](https://www.nuget.org/packages/Attribinter.Parameters.Type.Abstractions/)
-* [Attribinter.Parameters.Type.Core](https://www.nuget.org/packages/Attribinter.Parameters.Type.Core/)
-* [Attribinter.Parameters.Type.DependencyInjection](https://www.nuget.org/packages/Attribinter.Parameters.Type.DependencyInjection/)
+See [Paraminter](https://www.github.com/Paraminter/Paraminter) for more information.

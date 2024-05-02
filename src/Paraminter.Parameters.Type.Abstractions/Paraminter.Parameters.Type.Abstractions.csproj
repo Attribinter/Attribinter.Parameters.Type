@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+
+        <RootNamespace>Paraminter.Parameters</RootNamespace>
+
+        <Title>Paraminter.Parameters.Type.Abstractions</Title>
+        <Description>Provides abstractions related to Paraminter type parameters.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Paraminter.Parameters.Type.Core\Paraminter.Parameters.Type.Core.csproj" />
+    </ItemGroup>
+
+</Project>
