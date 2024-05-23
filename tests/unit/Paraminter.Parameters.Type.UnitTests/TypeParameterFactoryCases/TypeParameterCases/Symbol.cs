@@ -6,8 +6,6 @@ using Xunit;
 
 public sealed class Symbol
 {
-    private ITypeParameterSymbol Target() => Fixture.Sut.Symbol;
-
     private readonly IParameterFixture Fixture = ParameterFixtureFactory.Create();
 
     [Fact]
@@ -17,4 +15,6 @@ public sealed class Symbol
 
         Assert.Same(Fixture.SymbolMock.Object, result);
     }
+
+    private ITypeParameterSymbol Target() => Fixture.Sut.Symbol;
 }
