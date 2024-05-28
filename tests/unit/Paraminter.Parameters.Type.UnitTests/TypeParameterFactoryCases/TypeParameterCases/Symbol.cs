@@ -9,7 +9,7 @@ public sealed class Symbol
     private readonly IParameterFixture Fixture = ParameterFixtureFactory.Create();
 
     [Fact]
-    public void ReturnsSameAsConstructedWith()
+    public void ReturnsSymbol()
     {
         var result = Target();
 
