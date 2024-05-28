@@ -10,7 +10,11 @@ public sealed class AddParaminterTypeParameters
     [Fact]
     public void ITypeParameterFactory_ServiceCanBeResolved() => ServiceCanBeResolved<ITypeParameterFactory>();
 
-    private static void Target(IServiceCollection services) => ParaminterTypeParametersServices.AddParaminterTypeParameters(services);
+    private static void Target(
+        IServiceCollection services)
+    {
+        ParaminterTypeParametersServices.AddParaminterTypeParameters(services);
+    }
 
     [AssertionMethod]
     private static void ServiceCanBeResolved<TService>()
