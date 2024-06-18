@@ -1,10 +1,10 @@
-﻿namespace Paraminter.Parameters.TypeParameterFactoryCases.TypeParameterCases;
+﻿namespace Paraminter.Parameters.TypeParameter;
 
 using Microsoft.CodeAnalysis;
 
 using Moq;
 
-internal interface IParameterFixture
+internal interface IFixture
 {
     public abstract ITypeParameter Sut { get; }
 
