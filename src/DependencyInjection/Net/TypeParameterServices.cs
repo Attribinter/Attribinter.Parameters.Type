@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 
 /// <summary>Allows the services provided by <i>Paraminter.Parameters.Type</i> to be registered with <see cref="IServiceCollection"/>.</summary>
-public static class TypeServices
+public static class TypeParameterServices
 {
     /// <summary>Registers the services provided by <i>Paraminter.Parameters.Type</i> with the provided <see cref="IServiceCollection"/>.</summary>
     /// <param name="services">The <see cref="IServiceCollection"/> with which services are registered.</param>

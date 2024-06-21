@@ -9,7 +9,7 @@
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
 
         <ProjectReference Include="..\..\Abstractions\Abstractions.csproj" />
-        <ProjectReference Include="..\..\Implementation\Implementation.csproj" />
+        <ProjectReference Include="..\..\Implementation\Implementation.csproj" PrivateAssets="compile" />
     </ItemGroup>
 
 </Project>
