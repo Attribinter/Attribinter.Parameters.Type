@@ -31,6 +31,6 @@ public sealed class AddParaminterTypeParameters
     private static IServiceCollection Target(
         IServiceCollection services)
     {
-        return TypeServices.AddParaminterTypeParameters(services);
+        return TypeParameterServices.AddParaminterTypeParameters(services);
     }
 }
