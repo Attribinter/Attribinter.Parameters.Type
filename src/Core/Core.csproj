@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Type.Core</AssemblyName>
+
         <PackageId>Paraminter.Parameters.Type.Core</PackageId>
         <Description>Defines Paraminter type parameters.</Description>
     </PropertyGroup>
