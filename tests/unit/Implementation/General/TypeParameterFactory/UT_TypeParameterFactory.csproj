@@ -9,7 +9,8 @@
         <PackageReference Include="xunit.runner.visualstudio" />
 
         <ProjectReference Include="$(SolutionDir)\src\Abstractions\Abstractions.csproj" />
-        <ProjectReference Include="$(SolutionDir)\src\DependencyInjection\Net\Net.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Core\Core.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Implementation\General\General.csproj" />
     </ItemGroup>
 
 </Project>
