@@ -1,18 +1,24 @@
 ﻿namespace Paraminter.Parameters.TypeParameter;
 
+using Microsoft.CodeAnalysis;
+
 using Moq;
 
 internal static class FixtureFactory
 {
     public static IFixture Create()
     {
-        Mock<IGetTypeParameterQuery> queryMock = new() { DefaultValue = DefaultValue.Mock };
+        Mock<ITypeParameterSymbol> symbolMock = new();
+
+        Mock<IGetTypeParameterQuery> queryMock = new();
+
+        queryMock.Setup(static (query) => query.Symbol).Returns(symbolMock.Object);
 
         IQueryHandler<IGetTypeParameterQuery, ITypeParameter> factory = new GetTypeParameterQueryHandler();
 
         var sut = factory.Handle(queryMock.Object);
 
-        return new Fixture(sut, queryMock);
+        return new Fixture(sut, symbolMock);
     }
 
     private sealed class Fixture
@@ -20,19 +26,19 @@ internal static class FixtureFactory
     {
         private readonly ITypeParameter Sut;
 
-        private readonly Mock<IGetTypeParameterQuery> QueryMock;
+        private readonly Mock<ITypeParameterSymbol> SymbolMock;
 
         public Fixture(
             ITypeParameter sut,
-            Mock<IGetTypeParameterQuery> queryMock)
+            Mock<ITypeParameterSymbol> symbolMock)
         {
             Sut = sut;
 
-            QueryMock = queryMock;
+            SymbolMock = symbolMock;
         }
 
         ITypeParameter IFixture.Sut => Sut;
 
-        Mock<IGetTypeParameterQuery> IFixture.QueryMock => QueryMock;
+        Mock<ITypeParameterSymbol> IFixture.SymbolMock => SymbolMock;
     }
 }
