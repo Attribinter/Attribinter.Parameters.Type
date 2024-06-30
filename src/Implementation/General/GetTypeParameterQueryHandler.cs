@@ -2,8 +2,6 @@
 
 using Microsoft.CodeAnalysis;
 
-using Paraminter.Queries;
-
 using System;
 
 /// <summary>Handles <see cref="IGetTypeParameterQuery"/>, and responds with <see cref="ITypeParameter"/>.</summary>
