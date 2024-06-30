@@ -13,7 +13,7 @@ public sealed class Symbol
     {
         var result = Target();
 
-        Assert.Same(Fixture.SymbolMock.Object, result);
+        Assert.Same(Fixture.QueryMock.Object.Symbol, result);
     }
 
     private ITypeParameterSymbol Target() => Fixture.Sut.Symbol;

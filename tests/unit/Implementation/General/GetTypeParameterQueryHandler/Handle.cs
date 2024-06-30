@@ -1,19 +1,17 @@
 ﻿namespace Paraminter.Parameters;
 
-using Microsoft.CodeAnalysis;
-
 using Moq;
 
 using System;
 
 using Xunit;
 
-public sealed class Create
+public sealed class Handle
 {
     private readonly IFixture Fixture = FixtureFactory.Create();
 
     [Fact]
-    public void NullSymbol_ThrowsArgumentNullException()
+    public void NullQuery_ThrowsArgumentNullException()
     {
         var result = Record.Exception(() => Target(null!));
 
@@ -21,16 +19,16 @@ public sealed class Create
     }
 
     [Fact]
-    public void ValidSymbol_ReturnsTypeParameter()
+    public void ValidQuery_ReturnsTypeParameter()
     {
-        var result = Target(Mock.Of<ITypeParameterSymbol>());
+        var result = Target(Mock.Of<IGetTypeParameterQuery>());
 
         Assert.NotNull(result);
     }
 
     private ITypeParameter Target(
-        ITypeParameterSymbol symbol)
+        IGetTypeParameterQuery query)
     {
-        return Fixture.Sut.Create(symbol);
+        return Fixture.Sut.Handle(query);
     }
 }
