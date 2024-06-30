@@ -8,8 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="$(SolutionDir)\src\Abstractions\Abstractions.csproj" />
+        <PackageReference Include="Paraminter.Queries.Abstractions" />
+
         <ProjectReference Include="$(SolutionDir)\src\Core\Core.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Queries\Queries.csproj" />
     </ItemGroup>
 
 </Project>

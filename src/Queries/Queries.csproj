@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Type.Queries</AssemblyName>
+
+        <PackageId>Paraminter.Parameters.Type.Queries</PackageId>
+        <Description>Provides queries related to Paraminter type parameters.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" />
+
+        <PackageReference Include="Paraminter.Queries.Core" />
+    </ItemGroup>
+
+</Project>
