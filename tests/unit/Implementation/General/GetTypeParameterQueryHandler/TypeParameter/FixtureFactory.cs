@@ -2,8 +2,6 @@
 
 using Moq;
 
-using Paraminter.Queries;
-
 internal static class FixtureFactory
 {
     public static IFixture Create()

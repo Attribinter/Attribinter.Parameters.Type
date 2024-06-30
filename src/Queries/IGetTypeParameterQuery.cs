@@ -2,8 +2,6 @@
 
 using Microsoft.CodeAnalysis;
 
-using Paraminter.Queries;
-
 /// <summary>Represents a query for a type parameter.</summary>
 public interface IGetTypeParameterQuery
     : IQuery

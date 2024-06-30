@@ -1,7 +1,5 @@
 ﻿namespace Paraminter.Parameters;
 
-using Paraminter.Queries;
-
 internal static class FixtureFactory
 {
     public static IFixture Create()
