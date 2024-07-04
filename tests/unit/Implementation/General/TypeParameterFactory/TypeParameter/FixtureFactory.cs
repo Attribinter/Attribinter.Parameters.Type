@@ -10,13 +10,9 @@ internal static class FixtureFactory
     {
         Mock<ITypeParameterSymbol> symbolMock = new();
 
-        Mock<IGetTypeParameterBySymbolQuery> queryMock = new();
+        ITypeParameterFactory factory = new TypeParameterFactory();
 
-        queryMock.Setup(static (query) => query.Symbol).Returns(symbolMock.Object);
-
-        IQueryHandler<IGetTypeParameterBySymbolQuery, ITypeParameter> factory = new GetTypeParameterBySymbolQueryHandler();
-
-        var sut = factory.Handle(queryMock.Object);
+        var sut = factory.Create(symbolMock.Object);
 
         return new Fixture(sut, symbolMock);
     }
