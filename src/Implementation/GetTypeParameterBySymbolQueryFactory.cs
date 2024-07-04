@@ -23,7 +23,7 @@ public sealed class GetTypeParameterBySymbolQueryFactory
     }
 
     private sealed class GetTypeParameterBySymbolQuery
-    : IGetTypeParameterBySymbolQuery
+        : IGetTypeParameterBySymbolQuery
     {
         private readonly ITypeParameterSymbol Symbol;
 
