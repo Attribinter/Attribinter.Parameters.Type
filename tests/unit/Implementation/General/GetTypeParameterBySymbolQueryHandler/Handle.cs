@@ -1,5 +1,7 @@
 ﻿namespace Paraminter.Parameters;
 
+using Microsoft.CodeAnalysis;
+
 using Moq;
 
 using System;
@@ -21,9 +23,18 @@ public sealed class Handle
     [Fact]
     public void ValidQuery_ReturnsTypeParameter()
     {
-        var result = Target(Mock.Of<IGetTypeParameterBySymbolQuery>());
+        var symbol = Mock.Of<ITypeParameterSymbol>();
+        var typeParameter = Mock.Of<ITypeParameter>();
 
-        Assert.NotNull(result);
+        Mock<IGetTypeParameterBySymbolQuery> queryMock = new();
+
+        queryMock.Setup(static (query) => query.Symbol).Returns(symbol);
+
+        Fixture.TypeParameterFactoryMock.Setup((factory) => factory.Create(symbol)).Returns(typeParameter);
+
+        var result = Target(queryMock.Object);
+
+        Assert.Same(typeParameter, result);
     }
 
     private ITypeParameter Target(

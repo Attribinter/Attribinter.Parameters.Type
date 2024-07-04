@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Type</AssemblyName>
+
+        <PackageId>Paraminter.Parameters.Type</PackageId>
+        <Description>Provides general implementations of services related to Paraminter type parameters.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Paraminter.Queries.Abstractions" />
+
+        <ProjectReference Include="$(SolutionDir)\src\Abstractions\Abstractions.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Core\Core.csproj" />
+        <ProjectReference Include="$(SolutionDir)\src\Queries\Queries.csproj" />
+    </ItemGroup>
+
+</Project>

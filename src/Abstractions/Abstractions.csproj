@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <AssemblyName>Paraminter.Parameters.Type.Implementation.General</AssemblyName>
+        <AssemblyName>Paraminter.Parameters.Type.Abstractions</AssemblyName>
 
-        <PackageId>Paraminter.Parameters.Type.Implementation.General</PackageId>
-        <Description>Provides general implementations of services related to Paraminter type parameters.</Description>
+        <PackageId>Paraminter.Parameters.Type.Abstractions</PackageId>
+        <Description>Provides abstractions of services related to Paraminter type parameters.</Description>
     </PropertyGroup>
 
     <ItemGroup>
