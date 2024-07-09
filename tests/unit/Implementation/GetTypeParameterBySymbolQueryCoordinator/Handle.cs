@@ -28,18 +28,30 @@ public sealed class Handle
 
         var symbol = Mock.Of<ITypeParameterSymbol>();
 
-        Target(fixture, symbol);
+        var response = Mock.Of<object>();
 
-        fixture.DelegatingCoordinatorMock.Verify((coordinator) => coordinator.Handle(It.Is(MatchCommandCreationDelegate(symbol))), Times.Once);
+        fixture.DelegatingCoordinatorMock.Setup(CoordinatorExpression<object>(symbol)).Returns(response);
+
+        var result = Target(fixture, symbol);
+
+        Assert.Same(response, result);
+
+        fixture.DelegatingCoordinatorMock.Verify(CoordinatorExpression<object>(symbol), Times.Once);
     }
 
-    private static Expression<Func<DCreateQuery<IGetTypeParameterBySymbolQuery, IGetTypeParameterBySymbolQueryFactory>, bool>> MatchCommandCreationDelegate(
+    private static Expression<Func<IQueryCoordinator<IGetTypeParameterBySymbolQuery, TResponse, IGetTypeParameterBySymbolQueryFactory>, TResponse>> CoordinatorExpression<TResponse>(
         ITypeParameterSymbol symbol)
     {
-        return (commandCreationDelegate) => VerifyCommandCreationDelegate(commandCreationDelegate, symbol);
+        return (coordinator) => coordinator.Handle(It.Is(MatchQueryCreationDelegate(symbol)));
     }
 
-    private static bool VerifyCommandCreationDelegate(
+    private static Expression<Func<DCreateQuery<IGetTypeParameterBySymbolQuery, IGetTypeParameterBySymbolQueryFactory>, bool>> MatchQueryCreationDelegate(
+        ITypeParameterSymbol symbol)
+    {
+        return (queryCreationDelegate) => VerifyQueryCreationDelegate(queryCreationDelegate, symbol);
+    }
+
+    private static bool VerifyQueryCreationDelegate(
         DCreateQuery<IGetTypeParameterBySymbolQuery, IGetTypeParameterBySymbolQueryFactory> queryCreationDelegate,
         ITypeParameterSymbol symbol)
     {
