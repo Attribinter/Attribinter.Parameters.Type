@@ -4,22 +4,22 @@ using Microsoft.CodeAnalysis;
 
 using System;
 
-/// <inheritdoc cref="ITypeParameterFactory"/>
+/// <summary>Handles creation of <see cref="ITypeParameter"/>.</summary>
 public sealed class TypeParameterFactory
-    : ITypeParameterFactory
+    : IQueryHandler<IGetTypeParameterBySymbolQuery, ITypeParameter>
 {
     /// <summary>Instantiates a <see cref="TypeParameterFactory"/>, handling creation of <see cref="ITypeParameter"/>.</summary>
     public TypeParameterFactory() { }
 
-    ITypeParameter ITypeParameterFactory.Create(
-        ITypeParameterSymbol symbol)
+    ITypeParameter IQueryHandler<IGetTypeParameterBySymbolQuery, ITypeParameter>.Handle(
+        IGetTypeParameterBySymbolQuery query)
     {
-        if (symbol is null)
+        if (query is null)
         {
-            throw new ArgumentNullException(nameof(symbol));
+            throw new ArgumentNullException(nameof(query));
         }
 
-        return new TypeParameter(symbol);
+        return new TypeParameter(query.Symbol);
     }
 
     private sealed class TypeParameter
