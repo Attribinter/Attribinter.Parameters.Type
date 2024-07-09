@@ -2,5 +2,5 @@
 
 internal interface IFixture
 {
-    public abstract ITypeParameterFactory Sut { get; }
+    public abstract IQueryHandler<IGetTypeParameterBySymbolQuery, ITypeParameter> Sut { get; }
 }
