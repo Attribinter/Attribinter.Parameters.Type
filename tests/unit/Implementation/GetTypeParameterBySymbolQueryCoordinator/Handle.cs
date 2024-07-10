@@ -22,7 +22,7 @@ public sealed class Handle
     }
 
     [Fact]
-    public void ValidArguments_HandlesCommand()
+    public void ValidArguments_HandlesQuery()
     {
         var fixture = FixtureFactory.Create<object>();
 
