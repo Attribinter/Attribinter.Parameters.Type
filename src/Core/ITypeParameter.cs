@@ -1,4 +1,4 @@
-﻿namespace Paraminter.Parameters;
+﻿namespace Paraminter.Parameters.Type;
 
 using Microsoft.CodeAnalysis;
 
