@@ -1,4 +1,4 @@
-# Paraminter.Parameters.Type.Queries.Core
+# Paraminter.Parameters.Type.Queries
 
 Defines queries related to `Paraminter` type parameters.
 
