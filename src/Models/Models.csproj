@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>Paraminter.Parameters.Type.Models</AssemblyName>
+
+        <RootNamespace>Paraminter.Parameters.Type.Models</RootNamespace>
+
+        <PackageId>Paraminter.Parameters.Type.Models</PackageId>
+        <Description>Defines models for Paraminter type parameters.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.Common" />
+    </ItemGroup>
+
+</Project>
