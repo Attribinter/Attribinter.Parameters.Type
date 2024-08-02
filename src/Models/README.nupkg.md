@@ -1,5 +1,5 @@
-# Paraminter.Parameters.Type.Core
+# Paraminter.Parameters.Type.Models
 
-Defines `Paraminter` type parameters.
+Defines models for `Paraminter` type parameters.
 
 See [GitHub](https://github.com/Paraminter/Paraminter.Parameters.Type) for more information.
