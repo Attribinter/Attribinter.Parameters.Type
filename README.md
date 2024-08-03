@@ -1,5 +1,5 @@
 # Paraminter.Parameters.Type
 
-Adds type parameters to `Paraminter`.
+Defines `Paraminter` type parameters.
 
 See [Paraminter](https://www.github.com/Paraminter/Paraminter) for more information.
