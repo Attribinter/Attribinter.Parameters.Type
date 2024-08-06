@@ -2,7 +2,7 @@
 
 using Microsoft.CodeAnalysis;
 
-using Paraminter.Associators.Models;
+using Paraminter.Parameters.Models;
 
 /// <summary>Represents a type parameter.</summary>
 public interface ITypeParameter

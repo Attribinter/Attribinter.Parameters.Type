@@ -12,7 +12,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.Common" />
 
-        <PackageReference Include="Paraminter.Associators.Models" />
+        <PackageReference Include="Paraminter.Parameters.Models" />
     </ItemGroup>
 
 </Project>
