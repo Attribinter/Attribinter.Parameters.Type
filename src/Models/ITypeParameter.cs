@@ -2,8 +2,11 @@
 
 using Microsoft.CodeAnalysis;
 
+using Paraminter.Associators.Models;
+
 /// <summary>Represents a type parameter.</summary>
 public interface ITypeParameter
+    : IParameter
 {
     /// <summary>The symbol associated with the type parameter.</summary>
     public abstract ITypeParameterSymbol Symbol { get; }
